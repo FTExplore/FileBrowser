@@ -43,7 +43,7 @@ public class PathCursorLoader extends AsyncTaskLoader<Cursor> {
 
     @Override
     public Cursor loadInBackground() {
-        File[] file_list = mPath.listFiles();
+        File[] file_list = mPath.listFiles(new VideoFileFilter());
         return new PathCursor(mPath, file_list);
     }
 
